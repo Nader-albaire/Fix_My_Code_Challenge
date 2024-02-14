@@ -1,11 +1,13 @@
 #!/usr/bin/node
+
 /*
     Print a square with the character #
     
     The size of the square must be the first argument 
     of the program.
-*/
 
+    change in size = parseInt(process.argv[2], 16)
+*/
 
 if (process.argv.length <= 2) {
     process.stderr.write("Missing argument\n");
@@ -16,9 +18,10 @@ if (process.argv.length <= 2) {
 
 size = parseInt(process.argv[2], 10)
 
-for (let i = 0 ; i < size ; i ++) {
-    for (let j = 0 ; j < size ; j ++) {
-        process.stdout.write("#");
+for (let i = 0; i < size; i++) {
+    let row = "";
+    for (let j = 0; j < size; j++) {
+        row += "#";
     }
-    process.stdout.write("\n");
+    console.log(row);
 }
